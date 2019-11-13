@@ -44,4 +44,16 @@ express()
       result: result
     })
   })
+  .get('/postage', function(req, res){
+    var weight = Number(req.query.weight);
+    var c = Number(req.query.class);
+    var result = calculateRate(weight, c);
+    console.log(weight);
+    console.log(c);
+    console.log(result);
+  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+function calculateRate(weight, c) {
+  return 9000;
+}
