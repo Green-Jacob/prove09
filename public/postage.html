@@ -8,12 +8,12 @@
   <body>
     <form class="form-control" action="postage" method="get">
       Postage Class:<br>
-      Letters(Stamped)<input type="radio" class="form-control" name="class" value="1">
-      Letters (Metered)<input type="radio" class="form-control" name="class" value=2">
-      Large Envelopes (Flats)<input type="radio" class="form-control" name="class" value="3">
-      First-Class Package Service—Retail<input type="radio" class="form-control" name="class" value="4">
+      <input type="radio" class="form-control" name="class" value="1">Letters(Stamped)<br>
+      <input type="radio" class="form-control" name="class" value="2">Letters (Metered)<br>
+      <input type="radio" class="form-control" name="class" value="3">Large Envelopes (Flats)<br>
+      <input type="radio" class="form-control" name="class" value="4">First-Class Package Service—Retail
       <hr>
-      Weight(ounces): <input type="number" class="form-control" name="weight" value="">
+      Weight(ounces): <input type="number" step="any" class="form-control" name="weight" value="">
       <hr>
       <input type="submit" name="submit" value="Calculate">
     </form>
