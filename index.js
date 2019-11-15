@@ -11,12 +11,14 @@ express()
   .get('/cool', (req, res) => res.send(cool()))
   .get('/postage', function(req, res){
     var weight = Number(req.query.weight);
-    var c = Number(req.query.class);
+    var c = req.query.class;
     var result = calculateRate(weight, c);
     result = precise(result);
     console.log(result);
     res.render("pages/results", {
-      result: result
+      result: result,
+      weight: weight,
+      c: c
     })
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
@@ -25,7 +27,7 @@ function calculateRate(weight, c) {
   console.log(c);
   var rate = 0.0;
   switch (c) {
-    case 1:
+    case "Letters(Stamped)":
       if (weight <= 3.5) {
         rate = stamped(weight);
       }
@@ -33,7 +35,7 @@ function calculateRate(weight, c) {
         rate = flats(weight);
       }
       break;
-    case 2:
+    case "Letters (Metered)":
       if (weight <= 3.5) {
         rate = metered(weight);
       }
@@ -41,7 +43,7 @@ function calculateRate(weight, c) {
         rate = flats(weight);
       }
       break;
-    case 3:
+    case "Large Envelopes (Flats)":
       if (weight <= 13) {
         rate = flats(weight);
       }
@@ -49,7 +51,7 @@ function calculateRate(weight, c) {
         rate = parcels(weight);
       }
       break;
-    case 4:
+    case "First-Class Package Service—Retail":
       rate = parcels(weight);
       break;
     default:
