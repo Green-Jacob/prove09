@@ -3,19 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Prove 09 - Postage Calculator</title>
-    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/master.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <form class="form-control" action="postage" method="get">
-      Postage Class:<br>
-      <input type="radio" class="form-control" name="class" value="1">Letters(Stamped)<br>
-      <input type="radio" class="form-control" name="class" value="2">Letters (Metered)<br>
-      <input type="radio" class="form-control" name="class" value="3">Large Envelopes (Flats)<br>
-      <input type="radio" class="form-control" name="class" value="4">First-Class Package Service—Retail
+    <div class="container">
+    <form class="form-group" action="postage" method="get">
+      <h3>Postage Class:</h3>
+      <input type="radio" name="class" value="1"><label>Letters(Stamped)</label><br>
+      <input type="radio" name="class" value="2"><label>Letters (Metered)</label><br>
+      <input type="radio" name="class" value="3"><label>Large Envelopes (Flats)</label><br>
+      <input type="radio" name="class" value="4"><label>First-Class Package Service—Retail</label>
       <hr>
-      Weight(ounces): <input type="number" step="any" class="form-control" name="weight" value="">
+      Weight(ounces): <input type="number" step="any" max="13" class="form-control" name="weight" value="">
       <hr>
       <input type="submit" name="submit" value="Calculate">
     </form>
+    </div>
   </body>
 </html>

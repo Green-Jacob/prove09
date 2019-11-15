@@ -155,5 +155,5 @@ function parcels(weight){
 }
 
 function precise(x) {
-  return Number.parseFloat(x).toPrecision(2);
+  return Number.parseFloat(x).toFixed(2);
 }
